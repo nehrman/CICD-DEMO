@@ -14,11 +14,7 @@
         name: "{{ ec2_environment }}-sec-group"
         description: "New security for {{ ec2_environment }} Instances"
         region: "{{ ec2_region }}"
-<<<<<<< HEAD
-        vpc_id: "{{ ec2_subnet_id }}"
-=======
         vpc_id: "{{ ec2_vpc_id  }}"
->>>>>>> 7b80c279d50952174a2511f02b9dedf12224aa80
         rules:
           - proto: "tcp"
             from_port: 22
