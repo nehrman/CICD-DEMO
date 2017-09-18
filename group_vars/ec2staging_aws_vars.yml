@@ -5,6 +5,7 @@ ami_windows: "ami-b0e240df"
 ec2_environment: "Staging"
 ec2_region: eu-central-1
 vpc_name: demo-vpc
+ec2_vpc_id: vpc-9fdb97f7
 ec2_instance_type: t2.small
 ec2_keypair: demo
 ec2_security_group: default
