@@ -28,7 +28,7 @@
     - name: Create EC2 Instance(s)
       ec2:
         region: "{{ ec2_region }}"
-        group: "{{ ec2_security_group }}"
+        group_id: "{{ secgrp.group_id }}"
         keypair: "{{ ec2_keypair }}"
         instance_type: "{{ ec2_instance_type }}"
         image: "{{ item.ami_id }}"
