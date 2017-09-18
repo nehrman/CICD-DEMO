@@ -11,8 +11,6 @@
   tasks:
     - name: Create EC2 Instance(s)
       ec2:
-        access_key: "{{ ec2_access_key }}"
-        secret_key: "{{ ec2_secret_key }}"
         region: "{{ ec2_region }}"
         group: "{{ ec2_security_group }}"
         keypair: "{{ ec2_keypair }}"
