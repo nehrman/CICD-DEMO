@@ -9,21 +9,21 @@
     - group_vars/ec2staging_aws_vars.yml
 
   tasks:
-        - name: Create security group for instances
-          ec2_group:
-            name: "{{ ec2_environment }}-sec-group"
-            description: "New security for {{ ec2_environment }} Instances"
-            region: "{{ ec2_region }}"
-            vpc_id: "{{ ec2_vpc_id }}"
-            rules:
-              - proto: "tcp"
-                from_port: 22
-                to_port: 22
-                cidr_ip: 0.0.0.0
-            rules_egress:
-              - proto: "all"
-                cidr_ip: 0.0.0.0
-          register: secgrp
+    - name: Create security group for instances
+      ec2_group:
+        name: "{{ ec2_environment }}-sec-group"
+        description: "New security for {{ ec2_environment }} Instances"
+        region: "{{ ec2_region }}"
+        vpc_id: "{{ ec2_vpc_id }}"
+        rules:
+          - proto: "tcp"
+            from_port: 22
+            to_port: 22
+            cidr_ip: 0.0.0.0
+        rules_egress:
+          - proto: "all"
+            cidr_ip: 0.0.0.0
+      register: secgrp
 
     - name: Create EC2 Instance(s)
       ec2:
