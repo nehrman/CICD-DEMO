@@ -1,5 +1,5 @@
 ---
-- name: Deploy Dev environment on AWS
+- name: Deploy Staging environment on AWS
   hosts: localhost
   connection: local
   gather_facts: false
