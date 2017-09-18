@@ -1,7 +1,5 @@
 ---
 customer: 'effisoft'
-ec2_access_key: 'AKIAIWBYG3UN4SE2L5SA'
-ec2_secret_key: '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'
 ami_linux: "ami-7de04212"
 ami_windows: "ami-b0e240df"
 ec2_environment: "Staging"
