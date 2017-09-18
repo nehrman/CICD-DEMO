@@ -27,8 +27,6 @@
 
     - name: Create EC2 Instance(s)
       ec2:
-        access_key: "{{ ec2_access_key }}"
-        secret_key: "{{ ec2_secret_key }}"
         region: "{{ ec2_region }}"
         group_id: "{{ secgrp.group_id }}"
         keypair: "{{ ec2_keypair }}"
