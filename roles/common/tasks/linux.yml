@@ -1,4 +1,7 @@
 ---
+- name: Install Python
+  raw: "test -e /usr/bin/python || yum install -y python2 python2-dnf python-simplejson"
+
 - name: Configure Timezone
   timezone:
     name: Europe/Paris
