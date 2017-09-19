@@ -37,7 +37,7 @@
         wait: True
         wait_timeout: 600
         instance_tags:
-          Name: "{{ customer }}-{{ vpc_name }}-{{ item.name }}-01"
+          Name: "{{ customer }}-{{ vpc_name }}-{{ item.name }}-{{ ec2_environment }}"
           Environment: "{{ ec2_environment }}"
           Server_Role: "{{ item.role }}"
         exact_count: "{{ ec2_instance_count }}"
