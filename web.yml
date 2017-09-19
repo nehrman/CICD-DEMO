@@ -1,0 +1,8 @@
+---
+- name: Configuring Web Server for DEV Environment in AWS
+  hosts: tag_Server_Role_web
+  remote_user: ec2-user
+  become: True
+
+  roles:
+    - common
