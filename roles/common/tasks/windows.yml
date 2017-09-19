@@ -1,0 +1,11 @@
+---
+- name: Configure timezone
+  win_timezone:
+    timzone: Romance Standard Time
+
+- name: Create Effisoft User with Admin role
+  win_user:
+    name: Effisoft_user
+    password: "P@sswOrd1!"
+    groups: ["Administrators"]
+    state: present
