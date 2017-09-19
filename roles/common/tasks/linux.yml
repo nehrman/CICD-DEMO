@@ -11,9 +11,9 @@
     name: ntp
     state: present
 
-- name: Copy the ntp.conf templates
-  template:
-    - src: ntp.conf.j2
-    - dest: /etc/ntp.conf
-  notify:
-    - restart ntp
+#- name: Copy the ntp.conf templates
+#  template:
+#    - src: ntp.conf.j2
+#    - dest: /etc/ntp.conf
+#  notify:
+#    - restart ntp
