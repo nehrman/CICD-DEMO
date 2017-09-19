@@ -1,0 +1,9 @@
+---
+- name: Configuring Web Server for DEV / Staging and Prod Environments
+  hosts: tag_Server_Role_Client_Machine
+  remote_user: fedora
+  become: True
+
+  roles:
+    - common
+    - client
