@@ -1,6 +1,6 @@
 ---
 customer: 'effisoft'
-ami_linux: "ami-7de04212"
+ami_linux: "ami-d74be5b8"
 ami_windows: "ami-b0e240df"
 ec2_environment: "Prod"
 ec2_region: eu-central-1
