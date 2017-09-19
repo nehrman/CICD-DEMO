@@ -12,19 +12,19 @@
         # Create a VM from a template
   - name: create the VM
     vmware_guest:
-      hostname: '{{ vsphere_host }}'
-      username: '{{ vsphere_user }}'
-      password: '{{ vsphere_password }}'
+      hostname: "{{ vsphere_host }}"
+      username: "{{ vsphere_user }}"
+      password: "{{ vsphere_password }}"
       validate_certs: no
       esxi_hostname: esxi_server
-      datacenter: 'ZWINDLER'
-      folder: A_DEPLOYER
+      datacenter: "{{ vmw_datacenter }}"
+      folder: "{{ vmw_folder }}"
       name: '{{ inventory_hostname }}'
       state: poweredon
-      guest_id: rhel7_64Guest
+      guest_id: "{{ vmw_os_type }}"
       annotation: "{{ notes }} - {{ creationdate }}"
       disk:
-      - size_gb: 150
+      - size_gb: "{{ vmw_disk_size }}"
         type: thin
         datastore: '{{ vsphere_datastore }}'
       networks:
