@@ -40,6 +40,8 @@
           Name: "{{ customer }}-{{ vpc_name }}-{{ item.name }}-01"
           Environment: "{{ ec2_environment }}"
           Server_Role: "{{ item.role }}"
-        count: "{{ ec2_instance_count }}"
+        exact_count: "{{ ec2_instance_count }}"
+        count_tag:
+          Server_Role: "{{ item.role }}"
       with_items: "{{ instances }}"
       register: ec2
