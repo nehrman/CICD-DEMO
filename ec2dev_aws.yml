@@ -43,5 +43,6 @@
         exact_count: "{{ ec2_instance_count }}"
         count_tag:
           Server_Role: "{{ item.role }}"
+          Environment: "{{ ec2_environment }}"
       with_items: "{{ instances }}"
       register: ec2
