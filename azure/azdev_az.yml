@@ -1,0 +1,20 @@
+---
+- name: Deploy Dev environment on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Create VMs
+      local_action:
+      module: azure_rm_virtualmachine
+        resource_group: AnsibleResource
+        name: testvm10
+        vm_size: Standard_D1
+        admin_username: admin
+        ssh_password: P@ssw0rd1!
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.1'
+          version: latest
