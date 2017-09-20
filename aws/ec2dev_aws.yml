@@ -48,8 +48,31 @@
       with_items: "{{ instances }}"
       register: ec2
 
-    - name: Refresh inventory to ensure new instaces exist in inventory
-      meta: refresh_inventory
+    - name: Add instances to inventory
+      local_action:
+        module: add_host
+        module: add_host
+        name: "{{ item.public_ip }}"
+        ansible_host: "{{ item.public_ip }}"
+        ansible_user: "{{ ec2_login_names[ec2_instance.os] }}"
+        ansible_port: "{{ ec2_ssh_port }}"
+        groups:
+         - "ec2"
+         - "tag_type_{{ec2_instance_tags.Server_Role}}"
+         - "tag_os_{{ec2_instance_tags.os}}"
+         - "tag_Environment_{{ec2_instance_tags.Environment}}"
+      with_items: "{{ ec2.tagged_instances }}"
+      when: ec2
+
+- name: Wait for SSH to come up
+  wait_for:
+    host: "{{ item.public_dns_name }}"
+    port: 22
+    delay: 60
+    timeout: 320
+    state: started
+  with_items: "{{ ec2.tagged_instances }}"
+
 
 - name: Ensure pyhton is installed on Linux OS
   hosts: tag_os_Linux
