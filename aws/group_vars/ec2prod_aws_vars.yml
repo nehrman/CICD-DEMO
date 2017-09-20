@@ -14,13 +14,21 @@ ec2_subnet_id: subnet-f18a9d99
 ec2_tag: demo
 ec2_tag_name_prefix: neh
 ec2_hosts: all
+ssh_port: "22"
+winrm_port: "5985"
 instances:
   - name: db
     ami_id: "{{ ami_linux }}"
     role: "Database Server"
+    os_type: "Linux"
+    ec2_connection_port: "{{ ssh_port }}"
   - name: web
     ami_id: "{{ ami_linux }}"
     role: "Web Server"
+    os_type: "Linux"
+    ec2_connection_port: "{{ ssh_port }}"
   - name: client
     ami_id: "{{ ami_windows }}"
     role: "Client Machine"
+    os_type: "Windows"
+    ec2_connection_port: "{{ winrm_port }}"
