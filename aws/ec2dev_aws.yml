@@ -49,6 +49,6 @@
 
     - name: Add EC2 Instances to Inventory
       add_host:
-        hostname: "{{ item.public_ip }}"
+        hostname: "{{ item.Name }}"
         groups: toto
-      with_items: ec2.instances
+      with_items: "{{ ec2.instances }}"
