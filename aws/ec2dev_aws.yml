@@ -40,6 +40,7 @@
           Name: "{{ customer }}-{{ vpc_name }}-{{ item.name }}-{{ ec2_environment }}"
           Environment: "{{ ec2_environment }}"
           Server_Role: "{{ item.role }}"
+          os: "{{ item.os_type }}"
         exact_count: "{{ ec2_instance_count }}"
         count_tag:
           Server_Role: "{{ item.role }}"
@@ -49,6 +50,16 @@
 
     - name: Refresh inventory to ensure new instaces exist in inventory
       meta: refresh_inventory
+
+- name: Ensure pyhton is installed on Linux OS
+  host: tag_os_Linux
+  remote_user: fedora
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install Python
+      raw: "test -e /usr/bin/python || dnf install -y python2 python2-dnf python-simplejson"
 
 #    - name: Add EC2 Instances to Inventory
 #      add_host:

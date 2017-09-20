@@ -18,9 +18,12 @@ instances:
   - name: db
     ami_id: "{{ ami_linux }}"
     role: "Database Server"
+    os_type: "Linux"
   - name: web
     ami_id: "{{ ami_linux }}"
     role: "Web Server"
+    os_type: "Linux"
   - name: client
     ami_id: "{{ ami_windows }}"
     role: "Client Machine"
+    os_type: "Windows"
