@@ -1,6 +1,6 @@
 ---
 - name: Configuring Web Server for DEV / Staging and Prod Environments
-  hosts: tag_Server_Role_Web_Servers
+  hosts: tag_Server_Role_Web_Server
   remote_user: fedora
   become: True
 
