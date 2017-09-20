@@ -8,13 +8,13 @@
     - name: Create VMs
       local_action:
       module: azure_rm_virtualmachine
-        resource_group: AnsibleResource
-        name: testvm10
-        vm_size: Standard_D1
-        admin_username: admin
-        ssh_password: P@ssw0rd1!
-        image:
-          offer: CentOS
-          publisher: OpenLogic
-          sku: '7.1'
-          version: latest
+      resource_group: AnsibleResourceGroup
+      name: myVM
+      vm_size: Standard_DS1_v2
+      admin_username: azureuser
+      ssh_password_enabled: false
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.3'
+        version: latest
