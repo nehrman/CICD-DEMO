@@ -52,7 +52,7 @@
       meta: refresh_inventory
 
 - name: Ensure pyhton is installed on Linux OS
-  host: tag_os_Linux
+  hosts: tag_os_Linux
   remote_user: fedora
   become: true
   gather_facts: false
