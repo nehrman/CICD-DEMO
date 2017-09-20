@@ -7,14 +7,26 @@
   tasks:
     - name: Create VMs
       local_action:
-      module: azure_rm_virtualmachine
-      resource_group: AnsibleResourceGroup
-      name: myVM
-      vm_size: Standard_DS1_v2
-      admin_username: azureuser
-      ssh_password_enabled: false
-      image:
-        offer: CentOS
-        publisher: OpenLogic
-        sku: '7.3'
-        version: latest
+        module: azure_rm_virtualmachine
+        resource_group: AnsibleResourceGroup
+        name: myVM
+        vm_size: Standard_DS1_v2
+        admin_username: azureuser
+        ssh_password_enabled: false
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.3'
+          version: latest
+
+    - name: Create security group that allows SSH
+      azure_rm_securitygroup:
+        resource_group: AnsibleResourceGroup
+        name: secgroup001
+        rules:
+          - name: SSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 101
+            direction: Inbound
