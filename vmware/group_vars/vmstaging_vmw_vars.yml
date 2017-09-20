@@ -1,26 +1,32 @@
 ---
-customer: 'effisoft'
-ami_linux: "ami-5364c43c"
-ami_windows: "ami-b0e240df"
-ec2_environment: "Staging"
-ec2_region: eu-central-1
-vpc_name: demo-vpc
-ec2_vpc_id: vpc-9fdb97f7
-ec2_instance_type: t2.small
-ec2_keypair: demo
-ec2_security_group: default
-ec2_instance_count: 1
-ec2_subnet_id: subnet-f18a9d99
-ec2_tag: demo
-ec2_tag_name_prefix: neh
-ec2_hosts: all
+customer: "effisoft"
+vmw_templates_linux: "ami-5364c43c"
+vmw_templates_windows: "ami-b0e240df"
+vmw_os_type_linux: ""
+vmw_os_type_windows: ""
+vmw_datacenter: "EMEA CloudLab"
+vmw_cluster: "Demonstrations"
+vmw_resourpool: ""
+vmw_folder: "Individuals/nehrman"
+vmw_cpu: "2"
+vmw_mem: "2048"
+vmw_datastore: ""
+vmw_disk_size: "40"
+vmw_environment: "Staging"
+dnsserver1: ""
+dnsserver2: ""
+netmask: ""
+gateway: ""
 instances:
   - name: db
-    ami_id: "{{ ami_linux }}"
+    vmw_templates: "{{ vmw_templates_linux }}"
     role: "Database Server"
+    vmw_os_type: "{{ vmw_templates_linux }}"
   - name: web
-    ami_id: "{{ ami_linux }}"
+    vmw_templates: "{{ vmw_templates_linux }}"
     role: "Web Server"
+    vmw_os_type: "{{ vmw_os_type_linux}}"
   - name: client
-    ami_id: "{{ ami_windows }}"
+    vmw_templates: "{{ vmw_templates_windows }}"
     role: "Client Machine"
+    vmw_os_type: "{{ vmw_os_type_windows }}"
