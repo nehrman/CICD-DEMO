@@ -1,8 +1,8 @@
-- src: https://github.com/nehrman/aws
+- src: git+https://github.com/nehrman/aws.git
   name: aws
   version: master
 
-- src: https://github.com/nehrman/azure
+- src: git+https://github.com/nehrman/azure.git
   name: azure
   version: master
 
