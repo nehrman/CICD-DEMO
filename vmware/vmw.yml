@@ -1,7 +1,0 @@
-- name: Provisioning of DEV / STAGING and PRODUCTION Environments to VMW
-  hosts: localhot
-  connection: local
-  gather_facts: no
-- include: ec2dev_vmw.yml
-- include: ec2staging_vmw.yml
-- include: ec2prod_vmw.yml

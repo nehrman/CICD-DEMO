@@ -3,7 +3,7 @@
   name: nehrman.aws
   version: master
 
-- src: git+https://github.com/nehrman/azure.git
+- src: https://github.com/nehrman/azure.git
   scm: git
   name: nehrman.azure
   version: master
