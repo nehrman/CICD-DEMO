@@ -8,7 +8,7 @@ vars:
   az_environment: Dev
 
 roles:
-  - role: azure
+  - role: nehrman.azure
     instance_name: db
     instance_role: "Database Server"
     instance_ansible_port: "22"
@@ -18,7 +18,7 @@ roles:
     az_image_publisher: "OpenLogic"
     az_image_sku: "7.3"
 
-  - role: azure
+  - role: nehrman.azure
     instance_name: web
     instance_role: "Web Server"
     instance_ansible_port: "22"
@@ -28,7 +28,7 @@ roles:
     az_image_publisher: "OpenLogic"
     az_image_sku: "7.3"
 
-  - role: azure
+  - role: nehrman.azure
     instance_name: client
     instance_role: "Client Machine"
     instance_ansible_port: "5985"

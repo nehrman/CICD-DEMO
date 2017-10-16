@@ -1,11 +1,14 @@
-- src: git+https://github.com/nehrman/aws.git
-  name: aws
+- src: https://github.com/nehrman/aws.git
+  scm: git
+  name: nehrman.aws
   version: master
 
 - src: git+https://github.com/nehrman/azure.git
-  name: azure
+  scm: git
+  name: nehrman.azure
   version: master
 
 # - src: https://github.com/nehrman/vmw
-#   name: vmw
+#   scm: git
+#   name: nehrman.vmw
 #   version: master
