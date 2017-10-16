@@ -1,0 +1,34 @@
+---
+- name: Deploy Staging environment on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    ec2_environment: Staging
+
+  roles:
+    - role: aws
+      instance_name: db
+      instance_role: "Database Server"
+      instance_ansible_port: "22"
+      instance_ansible_user: "centos"
+      ami_id: "{{ ami_linux }}"
+      os_type: "linux"
+
+    - role: aws
+      instance_name: web
+      instance_role: "Web Server"
+      instance_ansible_port: "22"
+      instance_ansible_user: "centos"
+      ami_id: "{{ ami_linux }}"
+      os_type: "linux"
+
+    - role: aws
+      instance_name: client
+      instance_role: "Client Machine"
+      instance_ansible_port: "5985"
+      instance_ansible_user: "administrator"
+      instance_win_initial_password: "P@ssw0rd01"
+      ami_id: "{{ ami_windows }}"
+      os_type: "windows"

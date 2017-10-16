@@ -1,0 +1,9 @@
+---
+- name: Configure timezone
+  win_timezone:
+    timezone: Romance Standard Time
+
+- name: Ensure Notepad++ is installed using chocolatey
+  win_chocolatey:
+    name: notepadplusplus
+    state: present

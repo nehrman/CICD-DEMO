@@ -1,0 +1,9 @@
+---
+- name: Configuring Web Server for DEV / Staging and Prod Environments
+  hosts: appli_web
+  remote_user: fedora
+  become: True
+
+  roles:
+    - common
+    - web

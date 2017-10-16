@@ -1,0 +1,22 @@
+---
+- name: Install Database Server
+  yum:
+    name: postgresql
+    state: latest
+
+- name: Start Database service
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Create a Database
+  postgresql_db:
+    name: testdb
+    encoding: UTF-8
+
+- name: Create user for testdb
+  postgresql_user:
+    db: testdb
+    name: testuser
+    password: P@ssw0rd

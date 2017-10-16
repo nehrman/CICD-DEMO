@@ -1,0 +1,11 @@
+- src: https://github.com/nehrman/aws
+  name: aws
+  version: master
+
+- src: https://github.com/nehrman/azure
+  name: azure
+  version: master
+
+- src: https://github.com/nehrman/vmw
+  name: vmw
+  version: master

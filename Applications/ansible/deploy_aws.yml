@@ -1,0 +1,9 @@
+---
+
+- include: aws_dev.yml
+- include: aws_staging
+- include: aws_prod.yml
+- include: db.yml
+- include: web.yml
+- include: client.yml
+- include: webapp.yml
