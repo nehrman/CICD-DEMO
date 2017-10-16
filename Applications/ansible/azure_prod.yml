@@ -31,8 +31,8 @@
     - role: nehrman.azure
       instance_name: client
       instance_role: "Client Machine"
-      instance_ansible_port: "5985"
-      instance_ansible_user: "administrator"
+      instance_ansible_port: "5986"
+      instance_ansible_user: "testuser"
       instance_win_initial_password: "P@ssw0rd01"
       os_type: "Windows"
       az_image_offer: "CentOS"
