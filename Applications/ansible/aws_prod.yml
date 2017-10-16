@@ -5,7 +5,7 @@
   gather_facts: false
 
   vars:
-    ec2_environment: Prod
+    ec2_environment: prod
 
   roles:
     - role: nehrman.aws

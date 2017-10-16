@@ -5,7 +5,7 @@
   gather_facts: false
 
   vars:
-    ec2_environment: Dev
+    ec2_environment: dev
 
   roles:
     - role: nehrman.aws

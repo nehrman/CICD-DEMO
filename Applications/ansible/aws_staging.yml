@@ -5,7 +5,7 @@
   gather_facts: false
 
   vars:
-    ec2_environment: Staging
+    ec2_environment: staging
 
   roles:
     - role: nehrman.aws
