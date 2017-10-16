@@ -5,7 +5,7 @@
   gather_facts: false
 
 vars:
-  az_environment: Dev
+  az_environment: Staging
 
 roles:
   - role: nehrman.azure
