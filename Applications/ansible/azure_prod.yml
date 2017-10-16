@@ -4,37 +4,37 @@
   connection: local
   gather_facts: false
 
-vars:
-  az_environment: Prod
+  vars:
+    az_environment: Prod
 
-roles:
-  - role: nehrman.azure
-    instance_name: db
-    instance_role: "Database Server"
-    instance_ansible_port: "22"
-    instance_ansible_user: "centos"
-    os_type: "Linux"
-    az_image_offer: "CentOS"
-    az_image_publisher: "OpenLogic"
-    az_image_sku: "7.3"
+  roles:
+    - role: nehrman.azure
+      instance_name: db
+      instance_role: "Database Server"
+      instance_ansible_port: "22"
+      instance_ansible_user: "centos"
+      os_type: "Linux"
+      az_image_offer: "CentOS"
+      az_image_publisher: "OpenLogic"
+      az_image_sku: "7.3"
 
-  - role: nehrman.azure
-    instance_name: web
-    instance_role: "Web Server"
-    instance_ansible_port: "22"
-    instance_ansible_user: "centos"
-    os_type: "Linux"
-    az_image_offer: "CentOS"
-    az_image_publisher: "OpenLogic"
-    az_image_sku: "7.3"
+    - role: nehrman.azure
+      instance_name: web
+      instance_role: "Web Server"
+      instance_ansible_port: "22"
+      instance_ansible_user: "centos"
+      os_type: "Linux"
+      az_image_offer: "CentOS"
+      az_image_publisher: "OpenLogic"
+      az_image_sku: "7.3"
 
-  - role: nehrman.azure
-    instance_name: client
-    instance_role: "Client Machine"
-    instance_ansible_port: "5985"
-    instance_ansible_user: "administrator"
-    instance_win_initial_password: "P@ssw0rd01"
-    os_type: "Windows"
-    az_image_offer: "CentOS"
-    az_image_publisher: "OpenLogic"
-    az_image_sku: "7.3"
+    - role: nehrman.azure
+      instance_name: client
+      instance_role: "Client Machine"
+      instance_ansible_port: "5985"
+      instance_ansible_user: "administrator"
+      instance_win_initial_password: "P@ssw0rd01"
+      os_type: "Windows"
+      az_image_offer: "CentOS"
+      az_image_publisher: "OpenLogic"
+      az_image_sku: "7.3"
