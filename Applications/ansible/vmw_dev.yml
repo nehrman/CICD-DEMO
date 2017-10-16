@@ -14,7 +14,7 @@
       instance_ansible_port: "22"
       instance_ansible_user: "ansible"
       os_type: "linux"
-
+      vmw_templates:
 
     - role: nehrman.vmw
       instance_name: web
@@ -22,7 +22,7 @@
       instance_ansible_port: "22"
       instance_ansible_user: "ansible"
       os_type: "linux"
-
+      vmw_templates:
 
     - role: nehrman.vmw
       instance_name: client
@@ -31,3 +31,4 @@
       instance_ansible_user: "ansible"
       instance_win_initial_password: "P@ssw0rd01"
       os_type: "windows"
+      vmw_templates:
