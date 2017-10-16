@@ -1,7 +1,8 @@
 ---
 - name: Deploy Web App for DEV / Staging and Prod Environments
   hosts: appli_web
-  become: True
+  gather_facts: true
+  become: true
 
   roles:
     - webapp

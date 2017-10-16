@@ -1,6 +1,6 @@
 ---
-- name: Configuring Web Server for DEV / Staging and Prod Environments
-  hosts: appli_client
+- name: Configuring Client Machine for DEV / Staging and Prod Environments
+  hosts: client
   gather_facts: true
   become: true
 
