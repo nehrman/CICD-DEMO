@@ -1,40 +1,33 @@
 ---
-- name: Deploy Dev Test environment on Azure
+- name: Deploy Dev Test environment on VMware
   hosts: localhost
   connection: local
   gather_facts: false
 
   vars:
-    az_environment: dev
+    vmw_environment: dev
 
   roles:
-    - role: nehrman.azure
+    - role: nehrman.vmw
       instance_name: db
       instance_role: "db"
       instance_ansible_port: "22"
-      instance_ansible_user: "centos"
+      instance_ansible_user: "ansible"
       os_type: "linux"
-      az_image_offer: "CentOS"
-      az_image_publisher: "OpenLogic"
-      az_image_sku: "7.3"
 
-    - role: nehrman.azure
+
+    - role: nehrman.vmw
       instance_name: web
       instance_role: "web"
       instance_ansible_port: "22"
-      instance_ansible_user: "centos"
+      instance_ansible_user: "ansible"
       os_type: "linux"
-      az_image_offer: "CentOS"
-      az_image_publisher: "OpenLogic"
-      az_image_sku: "7.3"
 
-    - role: nehrman.azure
+
+    - role: nehrman.vmw
       instance_name: client
       instance_role: "client"
       instance_ansible_port: "5986"
-      instance_ansible_user: "testuser"
+      instance_ansible_user: "ansible"
       instance_win_initial_password: "P@ssw0rd01"
       os_type: "windows"
-      az_image_offer: "CentOS"
-      az_image_publisher: "OpenLogic"
-      az_image_sku: "7.3"

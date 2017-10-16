@@ -8,7 +8,7 @@
   name: nehrman.azure
   version: master
 
-# - src: https://github.com/nehrman/vmw
-#   scm: git
-#   name: nehrman.vmw
-#   version: master
+- src: https://github.com/nehrman/vmw
+  scm: git
+  name: nehrman.vmw
+  version: master

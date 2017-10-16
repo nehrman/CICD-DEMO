@@ -1,8 +1,8 @@
 ---
 
-# - include: azure_dev.yml
-- include: azure_staging.yml
-# - include: azure_prod.yml
+- include: vmw_dev.yml
+- include: vmw_staging.yml
+- include: vmw_prod.yml
 - include: db.yml
 - include: web.yml
 - include: client.yml
