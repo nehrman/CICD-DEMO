@@ -6,6 +6,7 @@
 
   vars:
     vmw_environment: dev
+    vmw_network: "POC-ETI-DEV"
 
   roles:
     - role: nehrman.vmw
@@ -14,7 +15,8 @@
       instance_ansible_port: "22"
       instance_ansible_user: "ansible"
       os_type: "linux"
-      vmw_templates:
+      vmw_os_type: "debian8_64Guest"
+      vmw_template: "00.Templates/TEMPLATE_LINUXDEBIAN8.7"
 
     - role: nehrman.vmw
       instance_name: web
@@ -22,7 +24,7 @@
       instance_ansible_port: "22"
       instance_ansible_user: "ansible"
       os_type: "linux"
-      vmw_templates:
+      vmw_template: "00.Templates/TEMPLATE_LINUXDEBIAN8.7"
 
     - role: nehrman.vmw
       instance_name: client
@@ -31,4 +33,5 @@
       instance_ansible_user: "ansible"
       instance_win_initial_password: "P@ssw0rd01"
       os_type: "windows"
-      vmw_templates:
+      vmw_os_type: "windows8Server64Guest"
+      vmw_template: "00.Templates/TEMPLATE_2012r2-DC-blank"
