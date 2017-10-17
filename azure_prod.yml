@@ -17,6 +17,7 @@
       az_image_offer: "CentOS"
       az_image_publisher: "OpenLogic"
       az_image_sku: "7.3"
+      az_ssh_pwd_enabled: "true"
 
     - role: nehrman.azure
       instance_name: web
@@ -27,6 +28,7 @@
       az_image_offer: "CentOS"
       az_image_publisher: "OpenLogic"
       az_image_sku: "7.3"
+      az_ssh_pwd_enabled: "true"
 
     - role: nehrman.azure
       instance_name: client
