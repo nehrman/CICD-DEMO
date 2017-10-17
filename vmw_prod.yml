@@ -24,6 +24,7 @@
       instance_ansible_port: "22"
       instance_ansible_user: "ansible"
       os_type: "linux"
+      vmw_os_type: "debian8_64Guest"
       vmw_template: "00.Templates/TEMPLATE_LINUXDEBIAN8.7"
 
     - role: nehrman.vmw
