@@ -1,0 +1,6 @@
+maven_group_id: "com.effisoft.orion"
+maven_artifact_id: "orion-app-full"
+maven_extension: "war"
+maven_repository_url: "http://fr-ass-08:8081/nexus/content/repositories/releases/"
+maven_version: "2.1.8"
+maven_dest: "/usr/share/tomcat/"

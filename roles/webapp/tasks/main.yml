@@ -1,8 +1,9 @@
 ---
 - name: Deploy Web App from Maven
   maven_artifact:
-    group_id: com.company
-    artifact_id: web-app
-    extension: war
-    repository_url: 'https://repo.company.com/maven'
-    dest: /var/lib/tomcat7/webapps/web-app.war
+    group_id: "{{ maven_group_id }}"
+    artifact_id: "{{ maven_artifact_id }}"
+    extension:  "{{ maven_extension }}"
+    repository_url:  "{{ maven_repository_url }}"
+    version: "{{ maven_version }}"
+    dest:  "{{ maven_dest }}"
