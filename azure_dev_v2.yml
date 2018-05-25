@@ -8,6 +8,7 @@
     az_environment: dev
 
   tasks:
+    
     - name: Deploy Database Instance
       include_role:
         name: nehrman.azure
