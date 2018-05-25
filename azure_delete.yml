@@ -5,7 +5,7 @@
   gather_facts: false
 
   vars:
-    az_environment: {{ environment }}
+    az_environment: ""
 
   tasks:
 
