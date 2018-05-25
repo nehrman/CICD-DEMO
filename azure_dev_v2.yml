@@ -12,7 +12,7 @@
     - name: Setup Azure Environment
       include_role:
         name: nehrman.azure
-        tasks_from: setup.yml
+        tasks_from: setup_env.yml
 
     - name: Deploy Database Instance
       include_role:
