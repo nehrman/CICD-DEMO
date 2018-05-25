@@ -1,0 +1,15 @@
+---
+- name: Deploy Dev Test environment on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    az_environment: "{{ environment }}"
+
+  tasks:
+
+    - name: Delete {{ environment }} from Azure
+      include_role:
+        name: nehrman.azure
+        tasks_from: delete_env.yml
