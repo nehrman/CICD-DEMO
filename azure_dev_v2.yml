@@ -12,8 +12,27 @@
     - name: Deploy Database Instance
       include_role:
         name: nehrman.azure
-
+      vars:
+        instance_name: db
+        instance_role: "db"
+        instance_ansible_port: "22"
+        instance_ansible_user: "centos"
+        os_type: "linux"
+        az_image_offer: "CentOS"
+        az_image_publisher: "OpenLogic"
+        az_image_sku: "7.3"
+        az_ssh_pwd_enabled: "true"
 
     - name: Deploy Web Apps Instance
       include_role:
         name: nehrman.azure
+      vars:
+        instance_name: web01
+        instance_role: "web"
+        instance_ansible_port: "22"
+        instance_ansible_user: "centos"
+        os_type: "linux"
+        az_image_offer: "CentOS"
+        az_image_publisher: "OpenLogic"
+        az_image_sku: "7.3"
+        az_ssh_pwd_enabled: "true"
