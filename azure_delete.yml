@@ -1,5 +1,5 @@
 ---
-- name: Deploy Dev Test environment on Azure
+- name: Cleanup Azure Environments
   hosts: localhost
   connection: local
   gather_facts: false
