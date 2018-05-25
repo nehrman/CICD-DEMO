@@ -17,7 +17,7 @@
     - name: Deploy Database Instance
       include_role:
         name: nehrman.azure
-        tasks_from: create.yml
+        tasks_from: create_db.yml
       vars:
         instance_name: db
         instance_role: "db"
@@ -32,7 +32,7 @@
     - name: Deploy Web Apps Instances
       include_role:
         name: nehrman.azure
-        tasks_from: create.yml
+        tasks_from: create_web.yml
       vars:
         instance_name: "web0{{ item }}"
         instance_role: "web"
