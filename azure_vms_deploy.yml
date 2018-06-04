@@ -25,9 +25,8 @@
         instance_ansible_user: "testuser"
         instance_win_initial_password: "P@ssw0rd01"
         az_os_type_vm: "Windows"
-        az_image_offer: "WindowsServer"
-        az_image_publisher: "MicrosoftWindowsServer"
-        az_image_sku: "2012-R2-Datacenter"
+        az_image_name: "w2k12r2_template"
+        az_image_resource_group: "templates"
       with_sequence: count="{{ az_win_web_count }}"
 
     - name: Deploy Linux Web Apps Instances
