@@ -25,7 +25,7 @@
         instance_ansible_user: "testuser"
         instance_win_initial_password: "P@ssw0rd01"
         az_os_type_vm: "Windows"
-        az_image_name: "w2k12r2_template"
+        az_image_name: "w2k12r2template-image"
         az_image_resource_group: "templates"
       with_sequence: count="{{ az_win_web_count }}"
 
