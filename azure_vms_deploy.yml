@@ -1,4 +1,4 @@
-$---
+---
 - name: Deploy Dev Test environment on Azure
   hosts: localhost
   connection: local
