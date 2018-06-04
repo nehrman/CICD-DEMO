@@ -17,7 +17,7 @@
     - name: Deploy Windows Web Apps Instances
       include_role:
         name: nehrman.azure
-        tasks_from: create_web.yml
+        tasks_from: create_win_web.yml
       vars:
         instance_name: "webwin0{{ item }}"
         instance_role: "web"
@@ -32,7 +32,7 @@
     - name: Deploy Linux Web Apps Instances
       include_role:
         name: nehrman.azure
-        tasks_from: create_web.yml
+        tasks_from: create_lin_web.yml
       vars:
         instance_name: "weblx0{{ item }}"
         instance_role: "web"
