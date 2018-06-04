@@ -1,0 +1,47 @@
+$---
+- name: Deploy Dev Test environment on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    az_environment: dev
+
+  tasks:
+
+    - name: Setup Azure Environment
+      include_role:
+        name: nehrman.azure
+        tasks_from: setup_env.yml
+
+    - name: Deploy Windows Web Apps Instances
+      include_role:
+        name: nehrman.azure
+        tasks_from: create_web.yml
+      vars:
+        instance_name: "webwin0{{ item }}"
+        instance_role: "web"
+        instance_ansible_port: "5986"
+        instance_ansible_user: "testuser"
+        instance_win_initial_password: "P@ssw0rd01"
+        os_type: "Windows"
+        az_image_offer: "WindowsServer"
+        az_image_publisher: "MicrosoftWindowsServer"
+        az_image_sku: "2012-R2-Datacenter"
+      with_sequence: count="{{ az_win_web_count }}"
+
+    - name: Deploy Linux Web Apps Instances
+      include_role:
+        name: nehrman.azure
+        tasks_from: create_web.yml
+      vars:
+        instance_name: "weblx0{{ item }}"
+        instance_role: "web"
+        instance_ansible_port: "22"
+        instance_ansible_user: "centos"
+        os_type: "linux"
+        az_image_offer: "CentOS"
+        az_image_publisher: "OpenLogic"
+        az_image_sku: "7.3"
+        az_ssh_pwd_enabled: "true"
+      with_sequence: count="{{ az_lx_web_count }}"
