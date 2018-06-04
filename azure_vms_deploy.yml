@@ -24,7 +24,7 @@
         instance_ansible_port: "5986"
         instance_ansible_user: "testuser"
         instance_win_initial_password: "P@ssw0rd01"
-        os_type: "Windows"
+        os_type: "windows"
         az_image_offer: "WindowsServer"
         az_image_publisher: "MicrosoftWindowsServer"
         az_image_sku: "2012-R2-Datacenter"
