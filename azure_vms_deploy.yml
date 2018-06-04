@@ -39,7 +39,7 @@
         instance_role: "web"
         instance_ansible_port: "22"
         instance_ansible_user: "centos"
-        az_os_type_vm: "linux"
+        az_os_type_vm: "Linux"
         az_image_offer: "CentOS"
         az_image_publisher: "OpenLogic"
         az_image_sku: "7.3"
