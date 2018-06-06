@@ -8,7 +8,7 @@
     ec2_environment: dev
 
   roles:
-    - role: nehrman.aws
+    - role: nehrman.ansible-role-aws
       instance_name: db
       instance_role: "db"
       instance_ansible_port: "22"
@@ -16,7 +16,7 @@
       ami_id: "{{ ami_linux }}"
       os_type: "linux"
 
-    - role: nehrman.aws
+    - role: nehrman.ansible-role-aws
       instance_name: web
       instance_role: "web"
       instance_ansible_port: "22"
@@ -24,7 +24,7 @@
       ami_id: "{{ ami_linux }}"
       os_type: "linux"
 
-    - role: nehrman.aws
+    - role: nehrman.ansible-role-aws
       instance_name: client
       instance_role: "client"
       instance_ansible_port: "5985"
