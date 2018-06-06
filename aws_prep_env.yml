@@ -1,0 +1,21 @@
+---
+- name: Prepare "{{ aws_environment }}" environment on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    aws_environment: dev
+
+  tasks:
+
+    - name: Setup AWS Environment
+      include_role:
+        name: nehrman.ansible-role-aws
+        tasks_from: setup_env.yml
+      vars:
+         aws_region: "eu-central-1"
+         aws_vpc_dns_support: yes
+         aws_vpc_dns_hostnames: yes
+         aws_vpc_cidr_block: "10.0.0.0/16"
+         aws_vpc_name: "clouddays"
