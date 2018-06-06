@@ -1,14 +1,14 @@
-- src: https://github.com/nehrman/aws.git
+- src: https://github.com/nehrman/ansible-role-aws.git
   scm: git
-  name: nehrman.aws
+  name: nehrman.ansible-role-aws
   version: master
 
-- src: https://github.com/nehrman/azure.git
+- src: https://github.com/nehrman/ansible-role-azure.git
   scm: git
-  name: nehrman.azure
+  name: nehrman.ansible-role-azure
   version: master
 
-- src: https://github.com/nehrman/vmw
+- src: https://github.com/nehrman/ansible-role-vmw
   scm: git
-  name: nehrman.vmw
+  name: nehrman.ansible-role-vmw
   version: master
