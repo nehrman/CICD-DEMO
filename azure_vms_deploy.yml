@@ -27,8 +27,6 @@
         az_os_type_vm: "Windows"
         az_image_name: "w2k12r2template-image"
         az_image_resource_group: "templates"
-      async: 1000
-      poll: 0
       with_sequence: count="{{ az_win_web_count }}"
 
 
@@ -46,6 +44,4 @@
         az_image_publisher: "OpenLogic"
         az_image_sku: "7.3"
         az_ssh_pwd_enabled: "true"
-      async: 1000
-      poll: 0
       with_sequence: count="{{ az_lx_web_count }}"
