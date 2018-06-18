@@ -13,7 +13,7 @@
   name: nehrman.ansible-role-vmw
   version: master
 
-- src: https://github.com/nehrman/ansible-role-openstack.git
-  scm: git
-  name: nehrman.ansible-role-openstack
-  version: master
+# - src: https://github.com/nehrman/ansible-role-openstack.git
+#   scm: git
+#   name: nehrman.ansible-role-openstack
+#   version: master
