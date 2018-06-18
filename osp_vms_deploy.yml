@@ -1,0 +1,35 @@
+---
+- name: Deploy Linux Instances on OpenStack
+  hosts: localhost
+  connection: local
+
+  vars:
+    osp_environment: prod
+
+  tasks:
+
+    - name: "Ensure OpenStack configuration is done"
+
+  # - name: Deploy Frontend instance
+  #   include_role:
+  #      name: osp_provision
+  #      vars_from: frontend.yml
+
+  - name: Deploy app1 instance
+    include_role:
+       name: osp_provision
+       vars_from: app1.yml
+
+  - name: Deploy app2 instance
+    include_role:
+       name: osp_provision
+       vars_from: app2.yml
+
+  # - name: Deploy Db instance
+  #   include_role:
+  #      name: osp_provision
+  #      vars_from: db.yml
+
+  - name: Create In-Memory Inventory
+    include_role:
+       name: osp_facts
