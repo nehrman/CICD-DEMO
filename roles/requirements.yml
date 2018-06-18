@@ -8,12 +8,12 @@
   name: nehrman.ansible-role-azure
   version: master
 
-- src: https://github.com/nehrman/ansible-role-vmw
+- src: https://github.com/nehrman/ansible-role-vmw.git
   scm: git
   name: nehrman.ansible-role-vmw
   version: master
 
-- src: https://github.com/nehrman/ansible-role-openstack
+- src: https://github.com/nehrman/ansible-role-openstack.git
   scm: git
   name: nehrman.ansible-role-openstack
   version: master
