@@ -11,5 +11,5 @@
 
     - name: Delete {{ az_environment }} from Azure
       include_role:
-        name: nehrman.azure
+        name: nehrman.ansible-role-azure
         tasks_from: delete_env.yml
