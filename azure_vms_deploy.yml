@@ -38,7 +38,7 @@
         instance_name: "weblx0{{ item }}"
         instance_role: "web"
         instance_ansible_port: "22"
-        instance_ansible_user: "centos"
+        instance_ansible_user: "testuser"
         az_os_type_vm: "Linux"
         az_image_offer: "CentOS"
         az_image_publisher: "OpenLogic"
