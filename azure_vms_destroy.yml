@@ -1,5 +1,5 @@
 ---
-- name: Destroy {{ az_environment }} environment on Azure
+- name: Destroy {{ az_environment }} VMs and dépendencies on Azure
   hosts: localhost
   connection: local
   gather_facts: false
