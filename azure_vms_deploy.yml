@@ -1,5 +1,5 @@
 ---
-- name: Deploy Dev Test environment on Azure
+- name: Deploy {{ az_environment }} environment on Azure
   hosts: localhost
   connection: local
   gather_facts: false

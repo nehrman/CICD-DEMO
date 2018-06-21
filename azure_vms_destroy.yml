@@ -1,0 +1,27 @@
+---
+- name: Destroy {{ az_environment }} environment on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    az_environment: dev
+
+  tasks:
+
+    - name: Destroy Windows Web Apps Instances
+      include_role:
+        name: nehrman.ansible-role-azure
+        tasks_from: delete_env_vms.yml
+      vars:
+        instance_name: "webwin0{{ item }}"
+      with_sequence: count="{{ az_win_web_count }}"
+
+
+    - name: Destroy Linux Web Apps Instances
+      include_role:
+        name: nehrman.ansible-role-azure
+        tasks_from: delete_env_vms.yml
+      vars:
+        instance_name: "weblx0{{ item }}"
+      with_sequence: count="{{ az_lx_web_count }}"
