@@ -1,0 +1,17 @@
+---
+- name: Count VMs in {{ az_resourcegroup_name }} on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    az_environment: dev
+
+  tasks:
+
+    - name: Destroy Windows Web Apps Instances
+      include_role:
+        name: nehrman.ansible-role-azure
+        tasks_from: count_instances.yml
+      vars:
+        instance_role: "web"
