@@ -12,7 +12,7 @@
     - name: Setup Azure Environment
       include_role:
         name: nehrman.ansible-role-azure
-        tasks_from: setup_env.yml
+        tasks_from: setup_env_with_lb.yml
 
     - name: Deploy Windows Web Apps Instances
       include_role:
